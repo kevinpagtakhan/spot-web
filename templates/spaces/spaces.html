@@ -1,0 +1,15 @@
+<div class="ui container">
+  <h1>Spaces</h1>
+
+  {{ sc.spaces }}
+
+  <div class="spaces ui segments">
+    <div class="space ui segment" ng-repeat="s in sc.spaces">
+      <p>{{ s._id }}</p>
+      <p>{{ s.address.line_1 }}<br>
+      <span ng-show="s.address.line_2.length">{{ s.address.line_2 }}<br></span>
+      {{ s.address.city }}, {{ s.address.state }} {{ s.address.zip_code }}</p>
+      
+    </div>
+  </div>
+</div>

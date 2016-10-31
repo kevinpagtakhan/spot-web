@@ -33,6 +33,11 @@ function router($stateProvider, $urlRouterProvider) {
       templateUrl: 'templates/profile/profileShow.html',
       controller: 'ProfileShowController as psc'
     })
+    .state('spaces', {
+      url: '/spaces',
+      templateUrl: 'templates/spaces/spaces.html',
+      controller: 'SpacesController as sc'
+    })
 
   $urlRouterProvider.otherwise('/');
 }
