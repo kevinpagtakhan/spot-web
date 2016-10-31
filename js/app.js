@@ -11,17 +11,17 @@ function router($stateProvider, $urlRouterProvider) {
     .state('login', {
       url: '/login',
       templateUrl: 'templates/login.html',
-      controller: 'loginController as lc'
+      controller: 'LoginController as lc'
     })
     .state('register', {
       url: '/register',
       templateUrl: 'templates/register.html',
-      controller: 'registerController as rc'
+      controller: 'RegisterController as rc'
     })
     .state('profile', {
       url: '/profile',
       templateUrl: 'templates/profile.html',
-      controller: 'profileController as pc'
+      controller: 'ProfileController as pc'
     })
 
   $urlRouterProvider.otherwise('/');

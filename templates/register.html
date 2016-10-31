@@ -1,3 +1,55 @@
-<div class="ui container">
+<div class="ui container" ng-init="agree = false">
   <h1>Register</h1>
+
+  <div class="ui grid">
+
+    <div class="five wide column"></div>
+
+    <div class="six wide column">
+      <div class="ui segment">
+
+        <form class="ui form" ng-submit="rc.createUser()">
+          <div class="field">
+            <label>Username <small>(8 character minimum)</small></label>
+            <input type="text" placeholder="johndoe" ng-model="rc.newUser.username" required minlength="8">
+          </div>
+
+          <div class="field">
+            <label>E-mail</label>
+            <input type="email" placeholder="johndoe@example.com" ng-model="rc.newUser.email" required>
+          </div>
+
+          <div class="field">
+            <label>Full Name</label>
+            <input type="text" placeholder="John Doe" ng-model="rc.newUser.name" required>
+          </div>
+
+          <div class="field">
+            <label>Password</label>
+            <input type="password" ng-model="rc.newUser.password">
+          </div>
+
+          <div class="field">
+            <label>Confirm password</label>
+            <input type="password" ng-model="rc.newUser.confirmPassword">
+          </div>
+
+          <div class="field">
+            <div class="ui checkbox">
+              <input type="checkbox" ng-model="agree">
+              <label>I agree to the <a href="#">Terms and Conditions</a></label>
+            </div>
+          </div>
+
+          <!-- <input class="ui button" type="submit" value="Register" ng-disabled="!(agree && (rc.newUser.password == rc.newUser.confirmPassword) && rc.newUser.password.length > 0)"> -->
+          <input class="ui button" type="submit" value="Register">
+        </form>
+
+      </div>
+    </div>
+
+    <div class="five wide column"></div>
+
+  </div>
+
 </div>
