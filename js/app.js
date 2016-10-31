@@ -43,6 +43,11 @@ function router($stateProvider, $urlRouterProvider) {
       templateUrl: 'templates/spaces/spacesShow.html',
       controller: 'SpacesShowController as ssc'
     })
+    .state('search', {
+      url: '/search',
+      templateUrl: 'templates/search/search.html',
+      controller: 'SearchController as sc'
+    })
 
   $urlRouterProvider.otherwise('/');
 }

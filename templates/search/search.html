@@ -1,0 +1,28 @@
+<div class="ui container">
+  <h1>Search</h1>
+  <form class="ui form" ng-submit="sc.searchNearby()">
+
+    <div class="field">
+      <label>Address</label>
+      <input type="text" ng-model="sc.address.origin" placeholder="1520 2nd Street Santa Monica, CA 90401">
+    </div>
+
+    <input class="ui button" type="submit" value="Search" />
+  </form>
+
+  <div class="ui segments">
+    <div class="ui segment" ng-repeat="s in sc.nearby">
+      <a ui-sref="spacesShow({id: s.space._id})">
+        <p>{{ s.space._id }}</p>
+        <p>{{ s.space.address.line_1 }}<br>
+        <span ng-show="s.space.address.line_2">{{ s.space.address.line_2 }}<br></span>
+        {{ s.space.address.city }}, {{ s.space.address.state }} {{ s.space.address.zip_code }}
+        </p>
+        <p>{{ s.space.description }}</p>
+        <p>{{ s.space.type }}</p>
+        <p>{{ s.duration }}</p>
+        <p>{{ s.distance }}</p>
+      </a>
+    </div>
+  </div>
+</div>
