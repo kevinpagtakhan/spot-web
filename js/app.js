@@ -23,6 +23,16 @@ function router($stateProvider, $urlRouterProvider) {
       templateUrl: 'templates/profile/profile.html',
       controller: 'ProfileController as pc'
     })
+    .state('profileEdit', {
+      url: '/profile/edit',
+      templateUrl: 'templates/profile/profileEdit.html',
+      controller: 'ProfileEditController as pec'
+    })
+    .state('profileShow', {
+      url: '/profile/:id',
+      templateUrl: 'templates/profile/profileShow.html',
+      controller: 'ProfileShowController as psc'
+    })
 
   $urlRouterProvider.otherwise('/');
 }
