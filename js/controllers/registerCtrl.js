@@ -1,9 +1,9 @@
 angular.module('app')
   .controller('RegisterController', RegisterController);
 
-RegisterController.$inject = ['$http'];
+RegisterController.$inject = ['$http', '$state'];
 
-function RegisterController($http) {
+function RegisterController($http, $state) {
   var vm = this;
 
   vm.createUser = function(){
@@ -11,7 +11,14 @@ function RegisterController($http) {
 
     $http.post(apiURL + 'users/', vm.newUser)
       .then(function (data) {
-        console.log(data);
+        if(data.data.success){
+          $state.go('login');
+        } else {
+          vm.user.password = '';
+          vm.user.confirmPassword = '';
+          // vm.feedback.type = 'error';
+          // vm.feedback.message = 'Incorrect username/password';
+        }
       })
   }
 }

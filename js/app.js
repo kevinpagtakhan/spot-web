@@ -20,7 +20,7 @@ function router($stateProvider, $urlRouterProvider) {
     })
     .state('profile', {
       url: '/profile',
-      templateUrl: 'templates/profile.html',
+      templateUrl: 'templates/profile/profile.html',
       controller: 'ProfileController as pc'
     })
 
