@@ -4,7 +4,10 @@
     <meta charset="utf-8">
 
     <!-- JavaScript -->
+    <script src="/js/vendor/angular.js" charset="utf-8"></script>
+    <script src="/js/vendor/angular-ui-router.js" charset="utf-8"></script>
     <script src="/js/app.js" charset="utf-8"></script>
+    <script src="/js/controllers/mainCtrl.js" charset="utf-8"></script>
 
     <!-- CSS -->
     <link rel="stylesheet" href="/css/dist/semantic.css">
@@ -12,7 +15,9 @@
 
     <title></title>
   </head>
-  <body>
+  <body ng-app="app" ng-controller="MainController as mc">
+
+    <ui-view></ui-view>
 
   </body>
 </html>
