@@ -38,6 +38,11 @@ function router($stateProvider, $urlRouterProvider) {
       templateUrl: 'templates/spaces/spaces.html',
       controller: 'SpacesController as sc'
     })
+    .state('spacesShow', {
+      url: '/spaces/:id',
+      templateUrl: 'templates/spaces/spacesShow.html',
+      controller: 'SpacesShowController as ssc'
+    })
 
   $urlRouterProvider.otherwise('/');
 }

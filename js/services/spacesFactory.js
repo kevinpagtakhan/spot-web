@@ -16,7 +16,7 @@ function SpacesFactory($http){
   }
 
   function show(id){
-    return $http.get(this.apiURL + id + this.tokenQuery);
+    return $http.get(this.apiURL + id + '?token=' + localStorage.getItem('token'));
   }
 
   function update(space){
