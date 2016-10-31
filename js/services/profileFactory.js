@@ -4,12 +4,14 @@ angular.module('app')
 function ProfileFactory($http){
 
   return {
+    loggedInUser: loggedInUser,
     show: show,
     update: update,
 
-    apiURL: 'http://localhost:3000/api/users/',
-    token: localStorage.getItem('token'),
-    tokenQuery: '?token=' + this.token
+    apiURL: 'http://localhost:3000/api/users/'
+  }
+  function loggedInUser(){
+    return $http.get(this.apiURL + '?token=' + localStorage.getItem('token'));
   }
 
   function show(id){

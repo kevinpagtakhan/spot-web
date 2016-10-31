@@ -1,4 +1,36 @@
 <div class="ui container">
   <h1>Profile</h1>
-  
+
+  <!-- <p>{{ pc.user }}</p> -->
+  <p>{{ pc.user.username }}</p>
+  <p>{{ pc.user.name }}</p>
+  <p>{{ pc.user.email }}</p>
+
+  <h3>Reservations</h3>
+
+  <div class="reservations ui segments">
+    <div class="reservation ui segment" ng-repeat="r in pc.user.reservations">
+      <!-- <p>{{ r}}</p> -->
+      <p>{{ r._id }}</p>
+      <p>{{ r.description }}</p>
+      <p>{{ r.date.from }}</p>
+      <p>{{ r.date.to }}</p>
+      <p>{{ r.confirmed }}</p>
+      <p>{{ r.space }}</p>
+    </div>
+
+  </div>
+
+  <h3>Spaces</h3>
+    <div class="spaces ui segments">
+      <div class="space ui segment" ng-repeat="s in pc.user.spaces">
+        <!-- {{ s }} -->
+        <p>{{ s._id }}</p>
+        <p>{{ s.address.line_1 }}<br>
+        <span ng-show="s.address.line_2.length > 0">{{ s.address.line_2 }}<br></span>
+        {{ s.address.city }}, {{ s.address.state }} {{ s.address.zip_code }}</p>
+        <p>{{ s.description }}</p>
+        <p>{{ s.reviews.length }} review<span ng-if="s.reviews.length != 1">s</span></p>
+      </div>
+    </div>
 </div>
