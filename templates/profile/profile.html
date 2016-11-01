@@ -35,8 +35,7 @@
         <div class="ui vertical padded segment" ng-repeat="r in pc.user.reservations">
           <p>{{ r._id }}</p>
           <p>{{ r.description }}</p>
-          <p>{{ r.date.from }}</p>
-          <p>{{ r.date.to }}</p>
+          <p>{{ r.date.from | date }} - {{ r.date.to | date }}</p>
           <p>{{ r.confirmed }}</p>
           <p>{{ r.space }}</p>
         </div>
