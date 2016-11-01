@@ -11,3 +11,9 @@ img{
   padding-bottom: 20px;
   background-color: #e2e2e2;
 }
+
+.ui.footer.segment {
+  background-image: url('http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/cartographer.png');
+    margin: 5em 0em 0em;
+    padding: 5em 0em;
+}

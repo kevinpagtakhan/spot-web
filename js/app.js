@@ -1,6 +1,7 @@
 angular.module('app', ['ui.router'])
   .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', router])
   .directive('navigationBar', navigationBar)
+  .directive('footer', footer)
 
 function router($stateProvider, $urlRouterProvider) {
 
@@ -67,5 +68,12 @@ function navigationBar(){
   return{
     restrict: 'E',
     templateUrl: 'partials/nav.html'
+  }
+}
+
+function footer(){
+  return{
+    restrict: 'E',
+    templateUrl: 'partials/footer.html'
   }
 }
