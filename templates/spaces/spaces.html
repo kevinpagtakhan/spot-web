@@ -4,7 +4,24 @@
 <div class="ui container" ng-hide="sc.isLoading">
   <h1>Spaces</h1>
 
-  <div class="spaces ui segments">
+  <div class="ui three column grid">
+    <div class="column" ng-repeat="s in sc.spaces">
+      <div class="ui vertical padded segment">
+        <a ui-sref="spacesShow({id: s.space._id})">
+          <img src="http://placehold.it/300" alt="" />
+          <!-- <p>{{ s.space._id }}</p> -->
+          <p>{{ s.address.line_1 }}<br>
+          <span ng-show="s.address.line_2">{{ s.address.line_2 }}<br></span>
+          {{ s.address.city }}, {{ s.address.state }} {{ s.address.zip_code }}
+          </p>
+          <!-- <p>{{ s.description }}</p> -->
+          <p>{{ s.type }}</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="spaces ui segments">
     <div class="space ui segment" ng-repeat="s in sc.spaces">
       <a ui-sref="spacesShow({id: s._id})">
         <p>{{ s._id }}</p>
@@ -12,6 +29,6 @@
         <span ng-show="s.address.line_2.length">{{ s.address.line_2 }}<br></span>
         {{ s.address.city }}, {{ s.address.state }} {{ s.address.zip_code }}</p>
       </a>
-  </div>
-  </div>
+    </div>
+  </div> -->
 </div>
