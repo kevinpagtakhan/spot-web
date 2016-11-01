@@ -11,8 +11,7 @@
           <img src="http://placehold.it/300" alt="" />
           <p>{{ r._id }}</p>
           <p>Space: {{ r._space }}</p>
-          <p>{{ r.date.from }}</p>
-          <p>{{ r.date.to }}</p>
+          <p>{{ r.date.from | date }} - {{ r.date.to | date }}</p>
           <p ng-show="r.confirmed">Confirmed</p>
           <p ng-show="!r.confirmed">Pending</p>
         </a>
