@@ -1,4 +1,7 @@
-<div class="ui container">
+<div class="ui active inverted dimmer" ng-show="sc.isLoading">
+  <div class="ui text loader">Loading</div>
+</div>
+<div class="ui container" ng-hide="sc.isLoading">
   <h1>Spaces</h1>
 
   <div class="spaces ui segments">

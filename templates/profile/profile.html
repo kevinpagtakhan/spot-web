@@ -1,4 +1,7 @@
-<div class="ui container">
+<div class="ui active inverted dimmer" ng-show="pc.isLoading">
+  <div class="ui text loader">Loading</div>
+</div>
+<div class="ui container" ng-hide="pc.isLoading">
   <h1>Profile</h1>
 
   <!-- <p>{{ pc.user }}</p> -->
