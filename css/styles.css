@@ -1,3 +1,13 @@
 .ui.page.main{
   padding-top: 80px;
 }
+
+img{
+  max-width: 100%;
+}
+
+.top.attached.header{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #e2e2e2;
+}

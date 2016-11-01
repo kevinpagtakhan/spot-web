@@ -2,38 +2,60 @@
   <div class="ui text loader">Loading</div>
 </div>
 <div class="ui container" ng-hide="pc.isLoading">
-  <h1>Profile</h1>
+  <div class="ui grid">
+    <div class="four wide column">
 
-  <!-- <p>{{ pc.user }}</p> -->
-  <p>{{ pc.user.username }}</p>
-  <p>{{ pc.user.name }}</p>
-  <p>{{ pc.user.email }}</p>
+      <h3 class="ui top attached header">
+        Hello!
+      </h3>
+      <div class="ui attached segment center aligned">
+        <img src="http://placehold.it/300" alt="" />
+        <h2>{{ pc.user.username }}</h2>
+        <p>{{ pc.user.name }}</p>
+        <p>{{ pc.user.email }}</p>
+      </div>
 
-  <h3>Reservations</h3>
+      <h3 class="ui top attached header">
+        Quick Links
+      </h3>
+      <div class="ui attached segment aligned">
+        <p><a href="#">Search for Spaces</a></p>
+        <p><a href="#">View Reservations</a></p>
+        <p><a href="#">Open Requests</a></p>
+      </div>
 
-  <div class="reservations ui segments">
-    <div class="reservation ui segment" ng-repeat="r in pc.user.reservations">
-      <!-- <p>{{ r}}</p> -->
-      <p>{{ r._id }}</p>
-      <p>{{ r.description }}</p>
-      <p>{{ r.date.from }}</p>
-      <p>{{ r.date.to }}</p>
-      <p>{{ r.confirmed }}</p>
-      <p>{{ r.space }}</p>
     </div>
 
-  </div>
+    <div class="twelve wide column">
 
-  <h3>Spaces</h3>
-    <div class="spaces ui segments">
-      <div class="space ui segment" ng-repeat="s in pc.user.spaces">
-        <!-- {{ s }} -->
-        <p>{{ s._id }}</p>
-        <p>{{ s.address.line_1 }}<br>
-        <span ng-show="s.address.line_2.length > 0">{{ s.address.line_2 }}<br></span>
-        {{ s.address.city }}, {{ s.address.state }} {{ s.address.zip_code }}</p>
-        <p>{{ s.description }}</p>
-        <p>{{ s.reviews.length }} review<span ng-if="s.reviews.length != 1">s</span></p>
+      <h3 class="ui top attached header">
+        Reservations
+      </h3>
+      <div class="ui attached segment">
+        <div class="ui vertical padded segment" ng-repeat="r in pc.user.reservations">
+          <p>{{ r._id }}</p>
+          <p>{{ r.description }}</p>
+          <p>{{ r.date.from }}</p>
+          <p>{{ r.date.to }}</p>
+          <p>{{ r.confirmed }}</p>
+          <p>{{ r.space }}</p>
+        </div>
+
+      </div>
+
+      <h3 class="ui top attached header">
+        Spaces
+      </h3>
+      <div class="ui attached segment">
+        <div class="ui vertical padded segment" ng-repeat="s in pc.user.spaces">
+          <p>{{ s._id }}</p>
+          <p>{{ s.address.line_1 }}<br>
+          <span ng-show="s.address.line_2.length > 0">{{ s.address.line_2 }}<br></span>
+          {{ s.address.city }}, {{ s.address.state }} {{ s.address.zip_code }}</p>
+          <p>{{ s.description }}</p>
+          <p>{{ s.reviews.length }} review<span ng-if="s.reviews.length != 1">s</span></p>
+        </div>
       </div>
     </div>
+  </div>
 </div>
