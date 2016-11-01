@@ -10,4 +10,24 @@
   </p>
   <p>{{ ssc.space.reviews.length }} review<span ng-show="ssc.space.reviews.length != 1">s</span></p>
 
+  <form class="ui form" ng-submit="ssc.reserveSpace()">
+
+    <div class="field">
+      <label>To</label>
+      <input type="date" ng-model="ssc.details.date.from">
+    </div>
+
+    <div class="field">
+      <label>From</label>
+      <input type="date" ng-model="ssc.details.date.to">
+    </div>
+
+    <div class="field">
+      <label>Message to host</label>
+      <textarea placeholder="Say hello" ng-model="ssc.details.description"></textarea>
+    </div>
+
+    <button class="ui button" type="submit">Reserve</button>
+  </form>
+
 </div>
