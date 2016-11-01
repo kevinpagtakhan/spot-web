@@ -60,6 +60,11 @@ function router($stateProvider, $urlRouterProvider) {
       templateUrl: 'templates/reservations/reservations.html',
       controller: 'ReservationsController as rc'
     })
+    .state('reservationsShow', {
+      url: '/reservations/:id',
+      templateUrl: 'templates/reservations/reservationsShow.html',
+      controller: 'ReservationsShowController as rsc'
+    })
 
   $urlRouterProvider.otherwise('/');
 }

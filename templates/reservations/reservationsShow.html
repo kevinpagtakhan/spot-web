@@ -1,0 +1,36 @@
+<div class="ui active inverted dimmer" ng-show="rsc.isLoading">
+  <div class="ui text loader">Loading</div>
+</div>
+<div class="ui container" ng-hide="rsc.isLoading">
+
+  <div class="ui grid">
+    <div class="ten wide column">
+      <h3 class="ui top attached header">
+        Reservation
+      </h3>
+      <div class="ui attached padded segment">
+        <p>{{ rsc.reservation.date.from | date }} - {{ rsc.reservation.date.to | date }}</p>
+        <p>{{ rsc.reservation._id }}</p>
+        <p>{{ rsc.reservation._space }}</p>
+        <p>{{ rsc.reservation.confirmed }}</p>
+        <p>{{ rsc.reservation.createdAt | date}}</p>
+      </div>
+
+      <h3 class="ui top attached header">
+        Messages
+      </h3>
+      <div class="ui attached padded segment">
+        {{ rsc.reservation.messages }}
+      </div>
+    </div>
+
+    <div class="six wide column">
+      <iframe id ="mymap"
+        frameborder="0" style="border:0"
+         allowfullscreen>
+      </iframe>
+
+    </div>
+  </div>
+
+</div>

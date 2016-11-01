@@ -7,7 +7,7 @@
   <div class="ui grid reservations">
     <div class="four wide column" ng-repeat="r in rc.reservations">
       <div class="reservation center aligned ui segment ">
-        <a href="#">
+        <a ui-sref="reservationsShow({id: r._id})">
           <img src="http://placehold.it/300" alt="" />
           <p>{{ r._id }}</p>
           <p>Space: {{ r._space }}</p>
