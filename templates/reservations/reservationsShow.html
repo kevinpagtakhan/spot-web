@@ -9,9 +9,12 @@
         Reservation
       </h3>
       <div class="ui attached padded segment">
-        <p>{{ rsc.reservation.date.from | date }} - {{ rsc.reservation.date.to | date }}</p>
         <p>{{ rsc.reservation._id }}</p>
-        <p>{{ rsc.reservation._space }}</p>
+        <p>{{ rsc.reservation.date.from | date }} - {{ rsc.reservation.date.to | date }}</p>
+        <p>{{ rsc.reservation._space.description }}</p>
+        <p ng-model="rsc.address.origin">{{ rsc.reservation._space.address.line_1 }}<br>
+        <span ng-show="rsc.reservation._space.address.line_2">{{ rsc.reservation._space.address.line_2 }}<br></span>
+      {{ rsc.reservation._space.address.city }}, {{ rsc.reservation._space.address.state }}{{ rsc.reservation.address._space.zip_code }}</p>
         <p>{{ rsc.reservation.confirmed }}</p>
         <p>{{ rsc.reservation.createdAt | date}}</p>
       </div>
@@ -25,7 +28,7 @@
     </div>
 
     <div class="six wide column">
-      <iframe id ="mymap"
+      <iframe id="mymap"
         frameborder="0" style="border:0"
          allowfullscreen>
       </iframe>
