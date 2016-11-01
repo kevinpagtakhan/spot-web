@@ -1,28 +1,66 @@
 <div class="ui container">
-  <h1>Search</h1>
-  <form class="ui form" ng-submit="sc.searchNearby()">
+  <div class="ui grid">
 
-    <div class="field">
-      <label>Address</label>
-      <input type="text" ng-model="sc.address.origin" placeholder="1520 2nd Street Santa Monica, CA 90401">
+    <div class="ten wide column">
+      <h3 class="ui top attached header">
+        Search
+      </h3>
+
+      <div class="ui attached segment">
+        <form class="ui form" ng-submit="sc.searchNearby()">
+          <div class="field">
+            <label>Address</label>
+            <input type="text" ng-model="sc.address.origin" ng-keyup="sc.updateMap()" placeholder="1520 2nd Street Santa Monica, CA 90401">
+          </div>
+
+          <div class="ui grid">
+            <div class="eight wide column">
+              <div class="field">
+                <label>From</label>
+                <input type="date">
+              </div>
+            </div>
+            <div class="eight wide column">
+              <div class="field">
+                <label>To</label>
+                <input type="date">
+              </div>
+            </div>
+          </div>
+
+          <input class="ui button" type="submit" value="Search" />
+
+        </form>
+      </div>
+      <div class="ui attached segment">
+        <div class="ui grid">
+          <div class="eight wide column" ng-repeat="s in sc.nearby">
+            <div class="ui vertical padded segment">
+              <a ui-sref="spacesShow({id: s.space._id})">
+                <img src="http://placehold.it/300" alt="" />
+                <!-- <p>{{ s.space._id }}</p> -->
+                <p>{{ s.space.address.line_1 }}<br>
+                <span ng-show="s.space.address.line_2">{{ s.space.address.line_2 }}<br></span>
+                {{ s.space.address.city }}, {{ s.space.address.state }} {{ s.space.address.zip_code }}
+                </p>
+                <!-- <p>{{ s.space.description }}</p> -->
+                <p>{{ s.space.type }}</p>
+                <p>{{ s.duration }} / {{ s.distance }}</p>
+              </a>
+              <div ng-click="sc.updateDestination(s.space.address);">View on map</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <input class="ui button" type="submit" value="Search" />
-  </form>
+    <div class="six wide column">
+      <iframe id ="mymap"
+        frameborder="0" style="border:0"
+         allowfullscreen>
+      </iframe>
 
-  <div class="ui segments">
-    <div class="ui segment" ng-repeat="s in sc.nearby">
-      <a ui-sref="spacesShow({id: s.space._id})">
-        <p>{{ s.space._id }}</p>
-        <p>{{ s.space.address.line_1 }}<br>
-        <span ng-show="s.space.address.line_2">{{ s.space.address.line_2 }}<br></span>
-        {{ s.space.address.city }}, {{ s.space.address.state }} {{ s.space.address.zip_code }}
-        </p>
-        <p>{{ s.space.description }}</p>
-        <p>{{ s.space.type }}</p>
-        <p>{{ s.duration }}</p>
-        <p>{{ s.distance }}</p>
-      </a>
     </div>
+
   </div>
 </div>
