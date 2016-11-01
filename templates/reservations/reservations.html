@@ -4,15 +4,19 @@
 <div class="ui container" ng-hide="rc.isLoading">
   <h1>Reservations</h1>
 
-  <div class="reservations ui segments">
-    <div class="reservation ui segment" ng-repeat="r in rc.reservations">
-      <a href="#">
-        <p>{{ r._id }}</p>
-        <p>Space: {{ r._space }}</p>
-        <p>{{ r.date.from }}</p>
-        <p>{{ r.date.to }}</p>
-        <p>{{ r.confirmed }}</p>
-      </a>
+  <div class="ui grid reservations">
+    <div class="four wide column" ng-repeat="r in rc.reservations">
+      <div class="reservation center aligned ui segment ">
+        <a href="#">
+          <img src="http://placehold.it/300" alt="" />
+          <p>{{ r._id }}</p>
+          <p>Space: {{ r._space }}</p>
+          <p>{{ r.date.from }}</p>
+          <p>{{ r.date.to }}</p>
+          <p ng-show="r.confirmed">Confirmed</p>
+          <p ng-show="!r.confirmed">Pending</p>
+        </a>
+      </div>
     </div>
   </div>
 </div>
