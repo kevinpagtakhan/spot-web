@@ -1,0 +1,15 @@
+<div class="ui container">
+  <h1>Reservations</h1>
+
+  <div class="reservations ui segments">
+    <div class="reservation ui segment">
+      <a href="#" ng-repeat="r in rc.reservations">
+        <p>{{ r._id }}</p>
+        <p>Space: {{ r._space }}</p>
+        <p>{{ r.date.from }}</p>
+        <p>{{ r.date.to }}</p>
+        <p>{{ r.confirmed }}</p>
+      </a>
+    </div>
+  </div>
+</div>

@@ -49,6 +49,11 @@ function router($stateProvider, $urlRouterProvider) {
       templateUrl: 'templates/search/search.html',
       controller: 'SearchController as sc'
     })
+    .state('reservations', {
+      url: '/reservations',
+      templateUrl: 'templates/reservations/reservations.html',
+      controller: 'ReservationsController as rc'
+    })
 
   $urlRouterProvider.otherwise('/');
 }
