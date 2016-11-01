@@ -1,5 +1,6 @@
 angular.module('app', ['ui.router'])
   .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', router])
+  .directive('navigationBar', navigationBar)
 
 function router($stateProvider, $urlRouterProvider) {
 
@@ -50,4 +51,11 @@ function router($stateProvider, $urlRouterProvider) {
     })
 
   $urlRouterProvider.otherwise('/');
+}
+
+function navigationBar(){
+  return{
+    restrict: 'E',
+    templateUrl: 'partials/nav.html'
+  }
 }
