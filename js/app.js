@@ -14,6 +14,11 @@ function router($stateProvider, $urlRouterProvider) {
       templateUrl: 'templates/login.html',
       controller: 'LoginController as lc'
     })
+    .state('logout', {
+      url: '/logout',
+      templateUrl: 'templates/logout.html',
+      controller: 'LogoutController as lc'
+    })
     .state('register', {
       url: '/register',
       templateUrl: 'templates/register.html',

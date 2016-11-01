@@ -7,7 +7,11 @@ function ReservationsController($state, ReservationsFactory){
   var vm = this;
 
   ReservationsFactory.index()
-    .success(function(data){
-      vm.reservations = data.data.reservations;
+    .then(function(data){
+      vm.reservations = data.data.data.reservations;
+    }, function failure(data){
+      if(data.status == 403){
+        $state.go('login');
+      }
     })
 }

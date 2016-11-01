@@ -7,7 +7,11 @@ function ProfileController($state, ProfileFactory){
   var  vm = this;
 
   ProfileFactory.loggedInUser()
-    .success(function(data){
-      vm.user = data.data
+    .then(function success(data){
+      vm.user = data.data.data
+    }, function failure(data){
+      if(data.status == 403){
+        $state.go('login');
+      }
     })
 }

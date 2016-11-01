@@ -7,7 +7,11 @@ function SpacesController($state, SpacesFactory){
   var vm = this;
 
   SpacesFactory.index()
-    .success(function(data){
-      vm.spaces = data.data;
+    .then(function success(data){
+      vm.spaces = data.data.data;
+    }, function failure(data){
+      if(data.status == 403){
+        $state.go('login');
+      }
     })
 }

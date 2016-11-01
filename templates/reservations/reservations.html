@@ -2,8 +2,8 @@
   <h1>Reservations</h1>
 
   <div class="reservations ui segments">
-    <div class="reservation ui segment">
-      <a href="#" ng-repeat="r in rc.reservations">
+    <div class="reservation ui segment" ng-repeat="r in rc.reservations">
+      <a href="#">
         <p>{{ r._id }}</p>
         <p>Space: {{ r._space }}</p>
         <p>{{ r.date.from }}</p>
