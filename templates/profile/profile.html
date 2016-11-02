@@ -4,7 +4,6 @@
 <div class="ui container" ng-hide="pc.isLoading">
   <div class="ui grid">
     <div class="four wide column">
-
       <h3 class="ui top attached header">
         Hello!
       </h3>
@@ -53,7 +52,7 @@
       <h3 class="ui top attached header">
         Spaces
       </h3>
-      <div class="ui attached segment" ng-show="pc.user.spaces > 0">
+      <div class="ui attached segment" ng-show="pc.user.spaces.length > 0">
         <div class="ui vertical padded segment" ng-repeat="s in pc.user.spaces">
           <p>{{ s._id }}</p>
           <p>{{ s.address.line_1 }}<br>
