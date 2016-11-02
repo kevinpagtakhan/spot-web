@@ -7,7 +7,7 @@
   <div class="ui three column grid">
     <div class="column" ng-repeat="s in sc.spaces">
       <div class="ui vertical padded segment">
-        <a ui-sref="spacesShow({id: s.space._id})">
+        <a ui-sref="spacesShow({id: s._id})">
           <img src="http://placehold.it/300" alt="" />
           <!-- <p>{{ s.space._id }}</p> -->
           <p>{{ s.address.line_1 }}<br>
