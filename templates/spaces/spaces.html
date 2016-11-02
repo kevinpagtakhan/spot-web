@@ -8,7 +8,8 @@
     <div class="column" ng-repeat="s in sc.spaces">
       <div class="ui vertical padded segment">
         <a ui-sref="spacesShow({id: s._id})">
-          <img src="http://placehold.it/300" alt="" />
+          {{s}}
+          <img ng-src="{{s.image_url}}" alt="" />
           <!-- <p>{{ s.space._id }}</p> -->
           <p>{{ s.address.line_1 }}<br>
           <span ng-show="s.address.line_2">{{ s.address.line_2 }}<br></span>
