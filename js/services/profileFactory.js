@@ -19,6 +19,6 @@ function ProfileFactory($http){
   }
 
   function update(user){
-    return $http.patch(apiURL + user._id, user);
+    return $http.post(this.apiURL + user._id + '?token=' + localStorage.getItem('token'), user);
   }
 }

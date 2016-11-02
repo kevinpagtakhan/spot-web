@@ -9,7 +9,12 @@
         Hello!
       </h3>
       <div class="ui attached segment center aligned">
-        <img src="http://placehold.it/300" alt="" />
+        <label for="file-input">
+          <img id="default-preview" ng-hide="pc.user.image_url" src="http://placehold.it/300" alt="" />
+          <img id="preview" ng-show="pc.user.image_url" ng-src="{{pc.user.image_url}}" alt="" />
+        </label>
+        <input type="file" id="file-input">
+        <input type="hidden" id="avatar-url">
         <h2>{{ pc.user.username }}</h2>
         <p>{{ pc.user.name }}</p>
         <p>{{ pc.user.email }}</p>
