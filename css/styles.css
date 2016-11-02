@@ -26,3 +26,7 @@ iframe{
 #file-input{
   /*display: none;*/
 }
+
+.ui.cards > .card, .ui.card{
+  width: 100%;
+}

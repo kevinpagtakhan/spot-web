@@ -22,7 +22,8 @@ function SearchController($state, SearchFactory){
 
   vm.updateDestination = function(address){
     console.log('clicked');
-    vm.address.destination = address.line_1 + address.line_2 + address.city + address.state;
+    address.line_2 = address.line_2 || '';
+    vm.address.destination = address.line_1 + ' ' + address.line_2 + ' ' + address.city + ' ' + address.state;
     vm.updateMap();
   }
 

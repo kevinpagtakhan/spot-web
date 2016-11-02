@@ -35,19 +35,32 @@
       <div class="ui attached segment">
         <div class="ui grid">
           <div class="eight wide column" ng-repeat="s in sc.nearby">
-            <div class="ui vertical padded segment">
-              <a ui-sref="spacesShow({id: s.space._id})">
-                <img src="http://placehold.it/300" alt="" />
-                <!-- <p>{{ s.space._id }}</p> -->
-                <p>{{ s.space.address.line_1 }}<br>
-                <span ng-show="s.space.address.line_2">{{ s.space.address.line_2 }}<br></span>
-                {{ s.space.address.city }}, {{ s.space.address.state }} {{ s.space.address.zip_code }}
-                </p>
-                <!-- <p>{{ s.space.description }}</p> -->
-                <p>{{ s.space.type }}</p>
-                <p>{{ s.duration }} / {{ s.distance }}</p>
-              </a>
-              <div ng-click="sc.updateDestination(s.space.address);">View on map</div>
+            <div class="ui card">
+              <div class="image">
+                <img ng-src="{{s.space.image_url}}">
+              </div>
+              <div class="content">
+                <a ui-sref="spacesShow({id: s.space._id})" class="header"><h3>{{ s.space.title || 'Parking' }}</h3></a>
+                <div class="meta">
+                  <span class="date"></span>
+                </div>
+                <div class="description">
+                  <div ng-click="sc.updateDestination(s.space.address);">
+                    <p>
+                      <span ng-hide="s.space.address.line_2"><br></span>
+                      {{ s.space.address.line_1 }}<br>
+                      <span ng-show="s.space.address.line_2">{{ s.space.address.line_2 }}<br></span>
+                      {{ s.space.address.city }}, {{ s.space.address.state }} {{ s.space.address.zip_code }}<br>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="extra content">
+                <a>
+                  <i class="write icon"></i>
+                  {{ s.space.reviews.length }} review<span ng-hide="s.space.reviews.length == 1">s</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
