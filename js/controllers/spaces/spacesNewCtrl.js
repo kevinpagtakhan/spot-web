@@ -13,9 +13,12 @@ function SpacesNewController($state, SpacesFactory){
   vm.createSpace = function(){
     SpacesFactory.create(vm.newSpace)
       .then(function success(data){
-        console.log(data);
+        var space_id = data.data.data._id;
+        $state.go('spacesShow', {'id': space_id});
       }, function failure(data){
-        console.log(data);
+        if(data.status == 403){
+          $state.go('logout');
+        }
       })
   }
 

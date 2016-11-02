@@ -14,7 +14,7 @@ function ProfileController($state, ProfileFactory){
       vm.isLoading = false;
     }, function failure(data){
       if(data.status == 403){
-        $state.go('login');
+        $state.go('logout');
       }
     })
 
