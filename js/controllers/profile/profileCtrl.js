@@ -29,7 +29,7 @@ function ProfileController($state, ProfileFactory){
 
     function getSignedRequest(file){
       const xhr = new XMLHttpRequest();
-      xhr.open('GET', `http://localhost:3000/api/sign-s3?file-name=${file.name}&file-type=${file.type}&token=${localStorage.getItem('token')}`);
+      xhr.open('GET', `http://localhost:3000/api/sign-s3?file-name=${vm.user._id}&file-type=${file.type}&token=${localStorage.getItem('token')}`);
       xhr.onreadystatechange = function() {
         if(xhr.readyState === 4){
           if(xhr.status === 200){
