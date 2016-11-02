@@ -31,7 +31,7 @@
       <h3 class="ui top attached header">
         Reservations
       </h3>
-      <div class="ui attached segment">
+      <div class="ui attached segment" ng-show="pc.user.reservations">
         <div class="ui vertical padded segment" ng-repeat="r in pc.user.reservations">
           <p>{{ r._id }}</p>
           <p>{{ r.description }}</p>
@@ -41,11 +41,14 @@
         </div>
 
       </div>
+      <div class="ui bottom attached segment">
+        <a ui-sref="search">Search for spaces</a>
+      </div>
 
       <h3 class="ui top attached header">
         Spaces
       </h3>
-      <div class="ui attached segment">
+      <div class="ui attached segment" ng-show="pc.user.spaces > 0">
         <div class="ui vertical padded segment" ng-repeat="s in pc.user.spaces">
           <p>{{ s._id }}</p>
           <p>{{ s.address.line_1 }}<br>
@@ -54,6 +57,9 @@
           <p>{{ s.description }}</p>
           <p>{{ s.reviews.length }} review<span ng-if="s.reviews.length != 1">s</span></p>
         </div>
+      </div>
+      <div class="ui bottom attached segment">
+        <a ui-sref="spacesNew">Add a new space</a>
       </div>
     </div>
   </div>
