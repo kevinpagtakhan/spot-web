@@ -6,6 +6,7 @@ function SpacesFactory($http){
   return {
     index: index,
     show: show,
+    create: create,
     update: update,
     reserveSpace: reserveSpace,
 
@@ -14,6 +15,10 @@ function SpacesFactory($http){
 
   function index(){
     return $http.get(this.apiURL + '?token=' + localStorage.getItem('token'));
+  }
+
+  function create(space){
+    return $http.post(this.apiURL + '?token=' + localStorage.getItem('token'), space);
   }
 
   function show(id){
