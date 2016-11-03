@@ -40,3 +40,20 @@ iframe{
   max-width: 200px;
   border-radius: 5px;
 }
+
+.home{
+  background-image: url('http://cdn.paper4pc.com/images/city-background-wallpaper-1.jpg');
+}
+
+.site-title{
+  font-size: 100px;
+  text-shadow: 1px 1px 1px #000;
+}
+
+.site-subtitle{
+  font-size: 40px;
+}
+
+.site-writeup{
+  font-size: 24px;
+}
