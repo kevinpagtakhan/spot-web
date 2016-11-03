@@ -30,3 +30,13 @@ iframe{
 .ui.cards > .card, .ui.card{
   width: 100%;
 }
+
+.segment{
+  overflow: auto;
+}
+
+.dash-avatar{
+  float: right;
+  max-width: 200px;
+  border-radius: 5px;
+}
