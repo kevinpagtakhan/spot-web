@@ -6,15 +6,24 @@
 
   <div class="ui grid reservations">
     <div class="four wide column" ng-repeat="r in rc.reservations">
-      <div class="reservation center aligned ui segment ">
-        <a ui-sref="reservationsShow({id: r._id})">
-          <img src="http://placehold.it/300" alt="" />
-          <p>{{ r._id }}</p>
-          <p>Space: {{ r._space }}</p>
-          <p>{{ r.date.from | date }} - {{ r.date.to | date }}</p>
-          <p ng-show="r.confirmed">Confirmed</p>
-          <p ng-show="!r.confirmed">Pending</p>
-        </a>
+      <div class="ui card">
+        <div class="image">
+          <img ng-src="{{r._space.image_url}}">
+        </div>
+        <div class="content">
+          <a class="header">{{r._space.title}}</a>
+          <div class="description">
+            <p>{{ r._space.address.line_1 }}<br>
+            <span ng-show="r._space.address.line_2.length > 0">{{ r._space.address.line_2 }}<br></span>
+            {{ r._space.address.city }}, {{ r._space.address.state }} {{ r._space.address.zip_code }}</p>
+            <p>{{ r._space.description }}</p>
+          </div>
+        </div>
+        <div class="extra content">
+          <a>
+            <span>{{ r.date.from | date }} - {{ r.date.to | date }}</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
