@@ -35,7 +35,33 @@
         Messages
       </h3>
       <div class="ui attached padded segment">
-        {{ rsc.reservation.messages }}
+        <div class="ui comments">
+          <div class="comment" ng-repeat="message in rsc.reservation.messages">
+            <a class="avatar">
+              <img ng-src="{{message._by.image_url}}">
+            </a>
+            <div class="content">
+              <span class="author">{{message._by.name}}</span>
+              <div class="text">
+                <p>{{message.content}}</p>
+              </div>
+              <div class="actions">
+                <a class="reply">{{message.createdAt | date}}</a>
+              </div>
+            </div>
+            <br>
+          </div>
+        </div>
+        <div class="ui form">
+          <div class="inline fields">
+            <div class="fourteen wide field">
+              <input type="text" placeholder="Message" ng-model="rsc.message.content">
+            </div>
+            <div class="two wide field">
+              <input type="button" class="ui button" value="Send" ng-click="rsc.sendMessage()">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 

@@ -1,13 +1,14 @@
 angular.module('app')
   .controller('ReservationsShowController', ReservationsShowController);
 
-ReservationsShowController.$inject = ['$state', '$stateParams', 'ReservationsFactory'];
+ReservationsShowController.$inject = ['$state', '$stateParams', 'ReservationsFactory', 'MessagesFactory'];
 
-function ReservationsShowController($state, $stateParams, ReservationsFactory){
+function ReservationsShowController($state, $stateParams, ReservationsFactory, MessagesFactory){
   var vm = this;
   vm.isLoading = true;
   vm.address = {}
   vm.map = {}
+  vm.message = {}
 
   vm.updateMap = function(){
     var address = vm.reservation._space.address;
@@ -35,4 +36,15 @@ function ReservationsShowController($state, $stateParams, ReservationsFactory){
     }, function failure(data){
       $state.go('logout');
     });
+
+  vm.sendMessage = function(){
+    MessagesFactory.create($stateParams.id, vm.message)
+      .then(function success(data){
+        console.log(data);
+        vm.reservation.messages = data.data.data;
+        vm.message = {}
+      }, function failure(data){
+        console.log(data);
+      })
+  }
 }
