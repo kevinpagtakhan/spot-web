@@ -26,7 +26,7 @@ function SpacesFactory($http){
   }
 
   function reserveSpace(body) {
-    return $http.post('http://localhost:3000/api/reservations?token=' + localStorage.getItem('token'), body);
+    return $http.post('http://kevinpagtakhan.com:3001/api/reservations?token=' + localStorage.getItem('token'), body);
   }
 
   function update(space){

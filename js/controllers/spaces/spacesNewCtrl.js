@@ -33,7 +33,7 @@ function SpacesNewController($state, SpacesFactory){
 
   function getSignedRequest(file){
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', 'http://localhost:3000/api/sign-s3?file-name=' + (new Date()).getTime() + '&file-type=' + file.type + '&token=' + localStorage.getItem('token'));
+    xhr.open('GET', 'http://kevinpagtakhan.com:3001/api/sign-s3?file-name=' + (new Date()).getTime() + '&file-type=' + file.type + '&token=' + localStorage.getItem('token'));
     xhr.onreadystatechange = function() {
       if(xhr.readyState === 4){
         if(xhr.status === 200){
