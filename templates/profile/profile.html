@@ -12,7 +12,7 @@
           <img id="default-preview" ng-hide="pc.user.image_url" src="http://placehold.it/300" alt="" />
           <img id="preview" ng-show="pc.user.image_url" ng-src="{{pc.user.image_url}}" alt="" />
         </label>
-        <input type="file" id="file-input">
+        <input type="file" id="file-input" class="hide">
         <input type="hidden" id="avatar-url">
         <h2>{{ pc.user.username }}</h2>
         <p>{{ pc.user.name }}</p>

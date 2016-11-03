@@ -62,3 +62,7 @@ iframe{
   padding-top: 60px;
   padding-botom: 60px;
 }
+
+.hide{
+  display: none;
+}

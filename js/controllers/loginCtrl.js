@@ -3,7 +3,7 @@ angular.module('app')
 
 LoginController.$inject = ['$http', '$state'];
 
-function LoginController($http, $state)
+function LoginController($http, $state){
 
   var vm = this;
   vm.test = 'ok'
