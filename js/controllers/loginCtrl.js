@@ -8,7 +8,7 @@ function LoginController($http, $state){
   var vm = this;
   vm.test = 'ok'
   vm.authenticateUser = function(){
-    var apiURL = 'http://localhost:3000/api/';
+    var apiURL = 'http://kevinpagtakhan.com:3001/api/';
 
     $http.post(apiURL + 'users/authenticate', vm.user)
       .then(function (data) {

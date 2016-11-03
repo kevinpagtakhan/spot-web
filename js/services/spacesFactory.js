@@ -10,7 +10,7 @@ function SpacesFactory($http){
     update: update,
     reserveSpace: reserveSpace,
 
-    apiURL: 'http://localhost:3000/api/spaces/'
+    apiURL: 'http://kevinpagtakhan.com:3001/api/spaces/'
   }
 
   function index(){

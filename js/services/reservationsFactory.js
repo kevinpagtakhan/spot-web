@@ -6,8 +6,8 @@ function ReservationsFactory($http){
     index: index,
     show: show,
     update: update,
-    apiUsersURL: 'http://localhost:3000/api/users/',
-    apiReservationsURL: 'http://localhost:3000/api/reservations/',
+    apiUsersURL: 'http://kevinpagtakhan.com:3001/api/users/',
+    apiReservationsURL: 'http://kevinpagtakhan.com:3001/api/reservations/',
   }
 
   function index(){

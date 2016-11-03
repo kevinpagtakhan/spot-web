@@ -8,7 +8,7 @@ function ProfileFactory($http){
     show: show,
     update: update,
 
-    apiURL: 'http://localhost:3000/api/users/'
+    apiURL: 'http://kevinpagtakhan.com:3001/api/users/'
   }
   function loggedInUser(){
     return $http.get(this.apiURL + '?token=' + localStorage.getItem('token'));

@@ -6,7 +6,7 @@ function SearchFactory($http){
   return {
     nearby: nearby,
 
-    apiURL: 'http://localhost:3000/api/search/'
+    apiURL: 'http://kevinpagtakhan.com:3001/api/search/'
   }
 
   function nearby(body){

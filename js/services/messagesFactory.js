@@ -5,7 +5,7 @@ function MessagesFactory($http){
   return {
     index: index,
     create: create,
-    apiURL: 'http://localhost:3000/api/reservations/',
+    apiURL: 'http://kevinpagtakhan.com:3001/api/reservations/',
   }
 
   function index(id){

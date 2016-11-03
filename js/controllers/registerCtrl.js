@@ -8,7 +8,7 @@ function RegisterController($http, $state) {
   vm.isLoading = false;
 
   vm.createUser = function(){
-    var apiURL = 'http://localhost:3000/api/';
+    var apiURL = 'http://kevinpagtakhan.com:3001/api/';
     vm.isLoading = true;
     $http.post(apiURL + 'users/', vm.newUser)
       .then(function (data) {
