@@ -5,13 +5,15 @@ RegisterController.$inject = ['$http', '$state'];
 
 function RegisterController($http, $state) {
   var vm = this;
+  vm.isLoading = false;
 
   vm.createUser = function(){
     var apiURL = 'http://localhost:3000/api/';
-
+    vm.isLoading = true;
     $http.post(apiURL + 'users/', vm.newUser)
       .then(function (data) {
         if(data.data.success){
+          vm.isLoading = false;
           $state.go('login');
         } else {
           vm.user.password = '';
