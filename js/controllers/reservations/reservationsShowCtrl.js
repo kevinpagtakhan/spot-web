@@ -12,7 +12,9 @@ function ReservationsShowController($state, $stateParams, ReservationsFactory){
   vm.updateMap = function(){
     var address = vm.reservation._space.address;
     vm.address.origin = address.line_1 + ' ';
-    vm.address.origin += address.line_2 + ' ';
+    if (vm.address.origin.line_2) {
+      vm.address.origin += address.line_2 + ' ';
+    }
     vm.address.origin += address.city + ' ';
     vm.address.origin += address.state + ' ';
     vm.address.origin += address.zip_code + ' ';

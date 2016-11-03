@@ -9,14 +9,26 @@
         Reservation
       </h3>
       <div class="ui attached padded segment">
-        <p>{{ rsc.reservation._id }}</p>
-        <p>{{ rsc.reservation.date.from | date }} - {{ rsc.reservation.date.to | date }}</p>
+        <img class="dash-avatar" ng-src="{{ rsc.reservation._space.image_url }}" />
+        <a><h3>{{ rsc.reservation._space.title }}</h3></a><br>
+
+        <p>
+          <strong>Dates</strong><br>
+          {{ rsc.reservation.date.from | date }} - {{ rsc.reservation.date.to | date }}
+        </p>
         <p>{{ rsc.reservation._space.description }}</p>
-        <p ng-model="rsc.address.origin">{{ rsc.reservation._space.address.line_1 }}<br>
-        <span ng-show="rsc.reservation._space.address.line_2">{{ rsc.reservation._space.address.line_2 }}<br></span>
-      {{ rsc.reservation._space.address.city }}, {{ rsc.reservation._space.address.state }}{{ rsc.reservation.address._space.zip_code }}</p>
-        <p>{{ rsc.reservation.confirmed }}</p>
-        <p>{{ rsc.reservation.createdAt | date}}</p>
+
+        <p ng-model="rsc.address.origin">
+          <strong>Address</strong><br>
+          {{ rsc.reservation._space.address.line_1 }}<br>
+          <span ng-show="rsc.reservation._space.address.line_2">
+            {{ rsc.reservation._space.address.line_2 }}<br>
+          </span>
+          {{ rsc.reservation._space.address.city }}, {{ rsc.reservation._space.address.state }}{{ rsc.reservation.address._space.zip_code }}
+        </p>
+
+        <p ng-hide="rsc.reservation.confirmed"><i class="warning circle icon"></i> Pending</p>
+        <p ng-show="rsc.reservation.confirmed"><i class="check circle icon"></i> Confirmed</p>
       </div>
 
       <h3 class="ui top attached header">
