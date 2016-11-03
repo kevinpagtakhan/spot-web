@@ -1,5 +1,5 @@
 <div class="ui container">
-  <div class="ui grid">
+  <div class="ui stackable grid">
 
     <div class="ten wide column">
       <h3 class="ui top attached header">
@@ -13,7 +13,7 @@
             <input type="text" ng-model="sc.address.origin" ng-keyup="sc.updateMap()" placeholder="1520 2nd Street Santa Monica, CA 90401">
           </div>
 
-          <div class="ui grid">
+          <div class="ui stackable grid">
             <div class="eight wide column">
               <div class="field">
                 <label>From</label>
@@ -33,7 +33,7 @@
         </form>
       </div>
       <div class="ui attached segment">
-        <div class="ui grid">
+        <div class="ui stackable grid">
           <div class="eight wide column" ng-repeat="s in sc.nearby">
             <div class="ui card">
               <div class="image">

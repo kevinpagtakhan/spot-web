@@ -4,7 +4,7 @@
 <div class="ui container" ng-hide="snc.isLoading">
   <h1>Space for rent</h1>
   <!-- <div class="ui grid"> -->
-    <form class="ui form grid" ng-submit="snc.createSpace()">
+    <form class="ui form stackable grid" ng-submit="snc.createSpace()">
       <div class="eight wide column">
         <div class="field">
           <label>Title</label>
@@ -28,7 +28,7 @@
 
       </div>
       <div class="eight wide column">
-        <div class="ui grid">
+        <div class="ui stackablegrid">
           <div class="eight wide column">
             <div class="field">
               <label>Address</label>
@@ -50,7 +50,7 @@
           <input type="text" placeholder="City" ng-model="snc.newSpace.address.city">
         </div>
 
-        <div class="ui grid">
+        <div class="ui stackable grid">
           <div class="eight wide column">
             <div class="field">
               <label>State</label>
