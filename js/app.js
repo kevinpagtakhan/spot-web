@@ -6,10 +6,10 @@ angular.module('app', ['ui.router'])
 function router($stateProvider, $urlRouterProvider) {
 
   $stateProvider
-    .state('home', {
-      url: '/',
-      templateUrl: 'templates/home.html'
-    })
+    // .state('home', {
+    //   url: '/',
+    //   templateUrl: 'templates/home.html'
+    // })
     .state('login', {
       url: '/login',
       templateUrl: 'templates/login.html',
@@ -20,8 +20,8 @@ function router($stateProvider, $urlRouterProvider) {
       templateUrl: 'templates/logout.html',
       controller: 'LogoutController as lc'
     })
-    .state('register', {
-      url: '/register',
+    .state('home', {
+      url: '/',
       templateUrl: 'templates/register.html',
       controller: 'RegisterController as rc'
     })
