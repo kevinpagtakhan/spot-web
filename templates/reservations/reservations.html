@@ -11,7 +11,7 @@
           <img ng-src="{{r._space.image_url}}">
         </div>
         <div class="content">
-          <a class="header">{{r._space.title}}</a>
+          <a ui-sref="reservationsShow({id: r._id})" class="header">{{r._space.title}}</a>
           <div class="description">
             <p>{{ r._space.address.line_1 }}<br>
             <span ng-show="r._space.address.line_2.length > 0">{{ r._space.address.line_2 }}<br></span>
